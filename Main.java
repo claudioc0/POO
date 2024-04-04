@@ -4,63 +4,57 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        while(true) {
+            System.out.println("Bem vindo a Steam!");
+            System.out.println("1 - Cadastrar Usuário");
+            System.out.println("2 - Logar");
+            System.out.println("3 - Visualizar jogos");
+            System.out.println("0 - Sair ");
 
-        Scanner scanner = new Scanner(System.in);
+            System.out.println("Escolha uma das opcoes: ");
+            Scanner scanner = new Scanner(System.in);
+            int respostaUser = scanner.nextInt();
 
-        // USUÁRIO
-        Usuario usuario = new Usuario();
-        usuario.setNickname("marcelo500");
-        System.out.println(usuario.getNome() + " seu novo nickname é " + usuario.getNickname());
+            if (respostaUser == 1) {
 
-        // TESTE
-        System.out.println("Sua senha é " + usuario.getSenha() + ". Deseja trocar de senha? ");
-        String resposta = scanner.nextLine();
-        if (resposta.equals("s")){
-            System.out.println("Digite sua nova senha: ");
-            String novaSenha = scanner.nextLine();
-            usuario.setSenha(novaSenha);
-            System.out.println("Sua nova senha é " + usuario.getSenha());
-        } else if (resposta.equals("n")) {
-            System.out.println("Sua senha continua a mesma");
+                Usuario usuario = new Usuario();
+
+                System.out.println("Insira seu nome: ");
+                String nome = scanner.nextLine();
+                usuario.setNome(nome);
+
+                System.out.println("Insira seu email: ");
+                String email = scanner.nextLine();
+                usuario.setEmail(email);
+
+                System.out.println("Insira sua senha: ");
+                String senha = scanner.nextLine();
+                usuario.setSenha(senha);
+
+                System.out.println("Insira seu nickname: ");
+                String nickname = scanner.nextLine();
+                usuario.setNickname(nickname);
+
+                System.out.println("Insira o seu país: ");
+                String pais = scanner.nextLine();
+                usuario.setPais(pais);
+
+                System.out.println("Insira sua daa de aniversário: ");
+                int aniversario = scanner.nextInt();
+                usuario.setAniversario(aniversario);
+
+                break;
+            }else if (respostaUser == 2){
+                System.out.println("Clicou 2");
+                break;
+            } else if (respostaUser == 3) {
+                System.out.println("Clicou 3");
+                break;
+            }else {
+                break;
+            }
+
+
         }
-
-        //JOGO
-        Jogo jogo = new Jogo();
-        System.out.println("Deixe sua review sobre o jogo " + jogo.getNome() + " ?");
-        String reviewUsuario = scanner.nextLine();
-        jogo.setReview(reviewUsuario);
-
-        //COMUNIDADE
-        Comunidade comunidade = new Comunidade();
-
-
-        System.out.println(comunidade.getNomeJogo());
-        System.out.println(comunidade.getSobreComunidade());
-        System.out.println(comunidade.getNoticiasComunidade());
-
-        System.out.println("fórum");
-
-        System.out.println("Faça um post no forum");
-        String mensagensforum = scanner.nextLine();
-        comunidade.setMensagensForum(mensagensforum);
-        System.out.println(comunidade.getMensagensForum());
-
-
-        //Suporte
-        Suporte suporte = new Suporte();
-
-        System.out.println(suporte.getProblema());
-        suporte.setProblema("quero solicitar um reembolso ");
-
-
-
-        //estatistica
-
-        Estatistica stats = new Estatistica();
-
-        System.out.println(stats.getNomeJogo());
-        System.out.println(stats.getData());
-        System.out.println(stats.getJogadoresOnline());
-        System.out.println(stats.getNumeroVendas());
     }
-    }
+}

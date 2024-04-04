@@ -55,7 +55,12 @@ public class Usuario {
     public void setSenha(String senha){
         this.senha = senha;
     }
+    public void setEmail(String email){this.email =email;}
+    public void setPais(String pais){this.pais = pais;}
 
+    public void setAniversario(int aniversario) {
+        this.aniversario = aniversario;
+    }
 
     //MÉTODOS
     public void logar(){
