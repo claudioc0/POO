@@ -56,4 +56,14 @@ public class Jogo {
     public void comprarJogo(){
         System.out.println("Jogo comprado");
     }
+
+    public void imprimirJogos(){
+        System.out.println("Lista de jogos disponíveis:");
+        System.out.println("1." + nome + " -R$" + preco);
+    }
+
+    public void adicionarReview(String novaReview) {
+        this.review = novaReview;
+    }
 }
+

@@ -1,8 +1,10 @@
-import java.util.Date;import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Usuario {
-
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
+    private List<Usuario> listaUsuarios = new ArrayList<>();
 
     // ATRIBUTOS
     private String email;
@@ -13,7 +15,7 @@ public class Usuario {
     private int aniversario;
 
     // CONSTRUTORES
-    public Usuario(String email, String senha, String nome, String nickname, String pais, int aniversario){
+    public Usuario(String email, String senha, String nome, String nickname, String pais, int aniversario) {
         this.email = email;
         this.senha = senha;
         this.nome = nome;
@@ -22,56 +24,72 @@ public class Usuario {
         this.aniversario = aniversario;
     }
 
-    public Usuario(){
-        this("email@gmail.com", "1234", "Marcelo", "marcelo20", "Brasil", 12/02/2000);
+    public Usuario() {
+        this("email@gmail.com", "1234", "Marcelo", "marcelo20", "Brasil", 12 / 02 / 2000);
     }
 
     //GETTERS
-    public String getNickname(){
+    public String getNickname() {
         return nickname;
     }
 
-    public String getSenha(){
+    public String getSenha() {
         return senha;
     }
 
-    public String getNome(){
+    public String getNome() {
         return nome;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
-    //SETTERS
 
-    public void setNome(String nome){
+    //SETTERS
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setNickname(String nickname){
+    public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
-    public void setSenha(String senha){
+    public void setSenha(String senha) {
         this.senha = senha;
     }
-    public void setEmail(String email){this.email =email;}
-    public void setPais(String pais){this.pais = pais;}
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
 
     public void setAniversario(int aniversario) {
         this.aniversario = aniversario;
     }
 
+    // Adicionar o usuário na lista
+    public void adicionarUsuario(Usuario usuario) {
+        listaUsuarios.add(usuario);
+    }
+
+    // Retornar a lista
+    public List<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
+
     //MÉTODOS
-    public void logar(){
+    public void logar() {
         System.out.println("Informe seu email: ");
         email = scanner.nextLine();
         System.out.println("Informe sua senha: ");
         senha = scanner.nextLine();
-
     }
 
-    public void comprarJogo(){
+    public void comprarJogo() {
         System.out.println("Jogo comprado");
     }
+
 }
