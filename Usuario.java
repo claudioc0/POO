@@ -88,8 +88,17 @@ public class Usuario {
         senha = scanner.nextLine();
     }
 
+    public void visualizar(Jogo j){
+        if (j instanceof Comunidade){
+            Comunidade c = (Comunidade)j; c.visualizarDiscussoes();
+        } else if (j instanceof Estatistica) {
+            Estatistica e = (Estatistica)j; e.visualizarMaisVendidos();
+        }
+    }
+
     public void comprarJogo() {
         System.out.println("Jogo comprado");
     }
+
 
 }

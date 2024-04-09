@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Jogo {
@@ -57,9 +58,9 @@ public class Jogo {
         System.out.println("Jogo comprado");
     }
 
-    public void imprimirJogos(){
+    public void visualizarJogos(){
         System.out.println("Lista de jogos disponíveis:");
-        System.out.println("1." + nome + " -R$" + preco);
+        System.out.println("Jogo: " + nome + "- R$" + preco);
     }
 
     public void adicionarReview(String novaReview) {

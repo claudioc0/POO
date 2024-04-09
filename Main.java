@@ -1,10 +1,35 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+
+        ArrayList<Jogo> lista = new ArrayList<Jogo>();
+        lista.add(new Estatistica());
+        lista.add(new Comunidade());
+
+
+        for  (Jogo  j: lista) {
+            j.visualizarJogos();
+        }
+
+        Jogo jogo;
+
+        Comunidade c = new Comunidade();
+        jogo = c;
+
+        Estatistica e = new Estatistica();
+        jogo = e;
+
+        Usuario u = new Usuario();
+        u.visualizar(c);
+        u.visualizar(e);
+
+
+
         Scanner scanner = new Scanner(System.in);
         Usuario usuario = new Usuario();
-        Jogo jogo = new Jogo();
+        Jogo jogo1 = new Jogo();
 
         while(true) {
             System.out.println("Bem vindo a Steam!");
@@ -22,7 +47,7 @@ public class Main {
                     cadastrarUsuario(scanner, usuario);
                     break;
                 case 2:
-                    adicionarReview(scanner, jogo);
+                    adicionarReview(scanner, jogo1);
                     break;
                 case 3:
                     visualizarJogos();
@@ -81,8 +106,8 @@ public class Main {
     }
 
     public static void visualizarJogos() {
-        Jogo jogo = new Jogo();
-        jogo.imprimirJogos();
+        Jogo jogo1 = new Jogo();
+        jogo1.visualizarJogos();
     }
 }
 

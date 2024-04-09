@@ -5,6 +5,9 @@ public class Comunidade extends Jogo{
     private String sobreComunidade;
     private String mensagensForum;
     private String noticiasComunidade;
+    Jogo jogo;
+
+
 
     //CONSTRUTORES
     public Comunidade( String nome, double preco, String tipo, String sobre, int anoLancamento, String review, String desenvolvedor, String sobreComunidade, String mensagensForum, String noticiasComunidade){
@@ -45,7 +48,19 @@ public class Comunidade extends Jogo{
     public void acessarPaginaInicial(){
         System.out.println("Bem vindo");
     }
-    public void acessarDiscussoes(){
+    public void visualizarDiscussoes(){
         System.out.println("Discussôes");
     }
+
+    public void visualizarJogos(){
+        System.out.println("Comunidades do jogo " + jogo.nome + ": ");
+        System.out.println(jogo.nome);
+    }
+
+
+
+
+
 }
+
+

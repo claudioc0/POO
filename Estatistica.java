@@ -3,6 +3,7 @@ public class Estatistica extends Jogo {
     private int data;
     private int numeroVendas;
     private int jogadoresOnline;
+    Jogo jogo;
 
     //CONSTRUTORES
     public Estatistica(String nome, double preco, String tipo, String sobre, int anoLancamento, String review, String desenvolvedor, int data, int numeroVendas ,int jogadoresOnline){
@@ -35,11 +36,11 @@ public class Estatistica extends Jogo {
     }
 
     //MÉTODOS
-    public void visualizarMaisJogados(){
-        System.out.println("Nome do jogo");
+    public void visualizarJogos(){
+        System.out.println("Jogos mais jogados: " + jogo.nome + "\n Jogadores Online: " + jogadoresOnline);
     }
 
     public void visualizarMaisVendidos(){
-        System.out.println("Nome dos mais vendidos");
+        System.out.println("Jogos mais vendidos: " + jogo.nome + "\n Número de vendas: " + numeroVendas);
     }
 }
